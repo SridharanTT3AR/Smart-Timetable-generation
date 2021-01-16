@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <script src="js/adminedit.js"></script>
+</head>
+<body>
+     <h1>Admin Table</h1>
+  <table class="table table-hover table-bordered table-dark table-striped edittable border">
+    <thead>
+      <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Phone_No</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Role</th>
+          <!-- <th scope="col">Edit</th> -->
+          <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%
+      if(Data.length!=0){
+      var i=1;
+      Data.forEach(function(data){
+      %>
+      <tr>
+          <td><%=data.ID%></td>
+          <td><%=data.Name %></td>
+          <td><%=data.Email %></td>
+          <td><%=data.Age %></td>
+          <td><%=data.Gender %></td>
+          <td><%=data.Phone_No%></td>
+          <td><%=data.Salary %></td>
+          <td><%=data.Role %></td>
+          <!-- <td><a href="/users/edit/<%=data.id%>">Edit</a></td> -->
+          <td> <button class="delete btn btn-outline-light" id="/delete/<%=data.ID%>,Admin">delete</button> </td>
+
+      </tr>
+      <%  i++; }) %>
+      <% } else{ %>
+          <tr>
+              <td colspan="7">No Data Found</td>
+          </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amrita TimeTable Management System</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600,700,900|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- local js -->
+  <!-- <script src="js/main.js"></script> -->
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- local css -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="header">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">atms</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" target="blank" href="https://intranet.cb.amrita.edu/">Intranet</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="modal"
+              data-target="#signinpage" aria-haspopup="true" aria-expanded="false">
+              Login
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Faculty</a>
+              <a class="dropdown-item" href="#">Admin</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About us</a>
+          </li>
+        </ul>
+        <!--  -->
+      </div>
+    </nav>
+
+  </div>
+  <!-- login -->
+  <div class="container">
+
+    <div class="modal fade" id="signinpage">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- header -->
+          <div class="modal-header text-center">
+            <h3 class="modal-title text-center">Sign in</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- body -->
+          <div class="modal-body">
+               <form role="form" action="/login" method="POST">
+                 <div class="form-group">
+                   <label for="email">Username</label>
+                   <input type="text" class="form-control" pattern="^[0-9]+$" name="username" required>
+                 </div>
+                 <div class="form-group">
+                   <label for="password">Password</label>
+                   <input type="password" class="form-control" name="password" pattern="^.{8,}$" required>
+                 </div>
+                 <button type="submit" class="btn btn-dark">Login</button>
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+
+  </div>
+
+  <!--  -->
+  <div class="title">
+    <div class="container-fluid"></div>
+    <img class="title-logo" src="images/amrita1.png" alt="logo">
+  </div>
+  </div>
+
+  <!--  -->
+  <section class="tt-section">
+    <div class="row">
+      <div id="class" class="tab col-lg-3 active" onclick="showContent(1)">
+        Class
+      </div>
+      <div id="faculty" class="tab col-lg-3" onclick="showContent(2)">
+        Faculty
+      </div>
+      <div id="classroom" class="tab col-lg-3" onclick="showContent(3)">
+        Classroom
+      </div>
+      <div id="lab" class="tab col-lg-3" onclick="showContent(4)">
+        Lab
+      </div>
+    </div>
+    <div id="tabContent">
+      <div id="class-content" class="content">
+        <label for="year">Year:</label>
+        <select name="year" id="year">
+          <option value=" " disabled="disabled">Year</option>
+          <option value="2020_21">2020-21</option>
+          <option value="2019_20">2019-20</option>
+          <option value="2018_19">2018-19</option>
+          <option value="2017_18">2017-18</option>
+          <option value="2016_17">2016-17</option>
+          <option value="2015_16">2015-16</option>
+
+        </select>
+        <label for="course">Course:</label>
+        <select name="course" id="course">
+          <option value="" selected="selected" disabled="disabled">Course</option>
+          <option value="BA">BA</option>
+          <option value="BTech">B.Tech.</option>
+          <option value="IMA">Int. MA</option>
+          <option value="IMSc">Int. M.Sc.</option>
+          <option value="MTech">M.Tech.</option>
+          <option value="MA">MA</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+          <option value="MSW">MSW</option>
+          <option value="PGD">PGD</option>
+          <option value="MSC">M.Sc.</option>
+        </select>
+        <label for="branch">Branch:</label>
+        <select name="branch" id="branch">
+          <option value="" selected="selected" disabled="disabled">Branch</option>
+          <option value="AEE">AEE</option>
+          <option value="AIE">AIE</option>
+          <option value="CHE">CHE</option>
+          <option value="CIE">CIE</option>
+          <option value="CVI">CVI</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="ELC">ELC</option>
+          <option value="EIE">EIE</option>
+          <option value="EAC">EAC</option>
+          <option value="CCE">CCE</option>
+          <option value="MEE">MEE</option>
+        </select>
+        <label for="sem">Semester:</label>
+        <select name="sem" id="sem">
+          <option value="" selected="selected" disabled="disabled">Semester</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <br><br>
+        <button type="button" class="btn btn-outline-dark" onclick="showPic()">Show Details</button>
+        <br><br>
+      </div>
+      <div id="faculty-content" class="content">
+        Faculty-content
+      </div>
+      <div id="classroom-content" class="content">
+        Classroom-content
+      </div>
+      <div id="lab-content" class="content">
+        Lab-content
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+
+  <!--  -->
+  <section id="about" class="about-section">
+    <div class="about">
+      <h2 class="about-text-title">About ATMS...</h2>
+      <p class="about-text">The automated timetable generation system generates timetable for each class and faculty, in keeping with the availability calendar of the faculties. In extension, it creates the occupancy chart for each classroom and lab, whilst all timetables are in accordance with the availability and capacity of such physical resources and rules applicable at the levels of different departments, semesters, faculties, and courses.</p>
+
+    </div>
+  </section>
+
+  <!--  -->
+  <section id="reviews">
+    <div class="bg-dark">
+      Copyright@2020
+    </div>
+
+
+  </section>
+
+
+
+</body>
+
+</html>

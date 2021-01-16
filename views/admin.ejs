@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-ATMS</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600,700,900|Ubuntu&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark py-0 bg-dark navbar-expand-lg py-md-0">
+        <a class="navbar-brand" href="#">atms</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="btn btn-dark btn-lg" href="user.html" role="button"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-3 admin-side-bar">
+            <img class="user-img"
+                src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/12/9-Best-Online-Avatars-and-How-to-Make-Your-Own-for-Free-image1-5.png"
+                width="200" alt="profile-pic" />
+            <h3 style="margin-left: 10%;"><%= name %></h3>
+            <h6 id="role">Admin</h6>
+            <h5 style="margin-left: 5%;display: inline-block;">Edit database</h5>
+            <i class="fa fa-table" style="margin-left: 20px;" aria-hidden="true"></i>
+            <div class="accordion" id="my-accordion">
+                <div>
+                    <div id="headingOne">
+                        <h5>
+                            <div id="add" class="collapsed functions" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                ADD
+                                <i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+                            </div>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#my-accordion">
+                        <div class="tables">
+                            <div id="admin-add" class="sub-functions" onclick="changeContent('admin-add')">
+                                <p>Admin</p>
+                                
+                            </div>
+
+                            <div id="course-add" class="sub-functions" onclick="changeContent('course-add')">
+                                <p>Course</p>
+                            </div>
+
+                            <div id="dept-add" class="sub-functions" onclick="changeContent('dept-add')">
+                                <p>Department</p>
+                            </div>
+
+                            <div id="faculty-add" class="sub-functions" onclick="changeContent('faculty-add')">
+                                <p>Faculty</p>
+                            </div>
+
+                            <div id="resources-add" class="sub-functions" onclick="changeContent('resources-add')">
+                                <p>Resources</p>
+                            </div>
+
+                            <div id="section-add" class="sub-functions" onclick="changeContent('section-add')">
+                                <p>Section</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div>
+                    <div id="headingTwo">
+                        <h5>
+                            <div id="update" class="collapsed functions" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                UPDATE
+                                <i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+                            </div>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#my-accordion">
+                        <div class="tables">
+
+                            <div id="faculty-update" class="sub-functions" onclick="changeContent('faculty-update')">
+                                <p>Faculty</p>
+                            </div>
+                            <div id="course-update" class="sub-functions" onclick="changeContent('course-update')">
+                                <p>Course</p>
+                            </div>
+                            <div id="section-update" class="sub-functions" onclick="changeContent('section-update')">
+                                <p>Section</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div>
+                    <div id="headingThree">
+                        <h5>
+                            <div id="delete" class="collapsed functions" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                DELETE
+                                <i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+                            </div>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#my-accordion">
+                        <div class="tables">
+                            <p style="margin-left:10%;">TABLES</p>
+                            <div id="faculty-delete" class="sub-functions" onclick="changeContent('faculty-delete')">
+                                <p>Faculty</p>
+                            </div>
+                            <div id="course-delete" class="sub-functions" onclick="changeContent('course-delete')">
+                                <p>Course</p>
+                            </div>
+                            <div id="section-delete" class="sub-functions" onclick="changeContent('section-delete')">
+                                <p>Section</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div>
+                    <div id="headingFour">
+                        <h5>
+                            <div id="replace" class="collapsed functions" type="button" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Faculty Replacement
+                                <i class="fa fa-angle-right arrow" aria-hidden="true"></i>
+                            </div>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#my-accordion">
+                        <div class="tables">
+                            <p style="margin-left:10%;">TABLES</p>
+                            <div id="faculty-replace" class="sub-functions" onclick="changeContent('faculty-replace')">
+                                <p>Faculty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+
+        </div>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+
+        <div class="col-sm div-on-right">
+            <div id="welcome">
+                <h1>WELCOME</h1>
+            </div>
+
+            <div id="admin-add-content" style="display: none;">
+                <h1>Enter Admin details</h1>
+                <form class="form-on-right" action="/addfaculty" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                                placeholder="Enter name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email </label>
+                            <input name="email" type="email" class="form-control" id="email"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="age">Age</label>
+                            <input name="age" type="number" class="form-control" id="age" placeholder="Enter Age">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="gender">Gender</label>
+                            <div class="form-control">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline1" value="M" name="customRadioInline1"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline1">Male
+                                    </label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline2" value="F" name="customRadioInline1"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline2">Female</label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline3" value="O" name="customRadioInline1"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline3">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="phone">Phone no</label>
+                            <input name="phone" type="number" class="form-control" id="phone"
+                                placeholder="Enter PhoneNo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="salary">Salary</label>
+                            <input name="salary" type="tel" class="form-control" id="salary" placeholder="Enter Salary">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="admin-role">Role</label>
+                            <input name="admin-role" type="text" class="form-control" id="admin-role"
+                                placeholder="Enter role of the admin">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                        Details</button>
+                </form>
+            </div>
+
+            <div id="dept-add-content" style="display: none;">
+                <h1>Enter Department details</h1>
+                <form class="form-on-right" action="index.html" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" class="form-control" id="name"
+                                placeholder="Enter name of the department">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="building">Building </label>
+                            <input name="building" type="text" class="form-control" id="building"
+                                placeholder="Enter name of the building">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="hodID">HoD_Id</label>
+                            <input name="hodID" type="number" class="form-control" id="hodID"
+                                placeholder="Enter HoD_ID">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="extNo">Ext_No</label>
+                            <input name="extNo" type="number" class="form-control" id="extNo"
+                                placeholder="Enter extension number">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                        Details</button>
+                </form>
+            </div>
+
+            <div id="faculty-add-content" style="display: none;">
+                <h1>Enter Faculty details</h1>
+                <form class="form-on-right" action="/addfaculty" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                                placeholder="Enter name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email </label>
+                            <input name="email" type="email" class="form-control" id="email"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="age">Age</label>
+                            <input name="age" type="number" class="form-control" id="age" placeholder="Enter Age">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Gender</label>
+                            <div class="form-control">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline1" name="gender"
+                                        class="custom-control-input" value="male">
+                                    <label class="custom-control-label" for="customRadioInline1"> Male </label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline2" name="gender"
+                                        class="custom-control-input" value="female">
+                                    <label class="custom-control-label" for="customRadioInline2"> Female </label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline3" name="gender"
+                                        class="custom-control-input" value="other">
+                                    <label class="custom-control-label" for="customRadioInline3">Other</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="phone">Phone no</label>
+                            <input name="phone" type="number" class="form-control" id="phone"
+                                placeholder="Enter PhoneNo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="salary">Salary</label>
+                            <input name="salary" type="number" class="form-control" id="salary" placeholder="Enter Salary">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="dept">DeptName</label>
+                            <input name="dept" type="text" class="form-control" id="dept"
+                                placeholder="Enter Department name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="domain">Domain Courses</label>
+                            <input name="domain" type="text" class="form-control" id="domain"
+                                placeholder="Enter Domain courses">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input name="designation" type="text" class="form-control" id="designation"
+                            placeholder="Enter designation">
+                    </div>
+                    <div class="form-group">
+                        <label for="qualification">Qualification</label>
+                        <input name="qualification" type="text" class="form-control" id="qualification"
+                            placeholder="Enter highest qualification">
+                    </div>
+                    <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                        Details</button>
+                </form>
+            </div>
+
+            <div id="course-add-content" style="display: none;">
+                <h1>Enter Course details</h1>
+                <form class="form-on-right" action="/addcourse" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="id">ID</label>
+                            <input name="id" type="text" class="form-control" id="id" placeholder="Enter course-id">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="coursename">Name</label>
+                            <input name="coursename" type="text" class="form-control" id="coursename"
+                                placeholder="Title of the course">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="type">Course Type:</label>
+                            <select name="type" class="form-control" id="type" onchange="updateForm(this.value)">
+                                <option value selected="selected" disabled="disabled">Type</option>
+                                <option>Theory</option>
+                                <option>Lab-based</option>
+                                <option>Elective</option>
+                                <option>Project-based</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="deptname">DeptName</label>
+                            <input name="deptname" type="text" class="form-control" id="deptname"
+                                placeholder="Enter department name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="semester">Semester</label>
+                            <input name="semester" type="number" class="form-control" id="semester"
+                                placeholder="Semester in which course is offered">
+                        </div>
+                        <div id="electiveID" class="form-group col-md-3" style="display: none;">
+                            <label for="electiveID">Elective ID</label>
+                            <input name="electiveID" type="text" class="form-control" id="electiveID"
+                                placeholder="e_id">
+
+                        </div>
+                    </div>
+                    <em>Hours per week</em>
+                    <br><br>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="L">Lectures ( L )</label>
+                            <input name="L" type="number" class="form-control" id="L" placeholder="-">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="T">Tutorials ( T )</label>
+                            <input name="T" type="number" class="form-control" id="T" placeholder="-">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="P">Practicals ( P )</label>
+                            <input name="P" type="number" class="form-control" id="P" placeholder="-">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="C">Credits ( C )</label>
+                            <input name="C" type="number" class="form-control" id="C" placeholder="-">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                        Details</button>
+                </form>
+            </div>
+
+
+            <div id="section-add-content" style="display: none;">
+                <h1>Enter Section Details</h1>
+                <form class="form-on-right" action="/addsection" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="sectionid">ID</label>
+                            <input name="sectionid" type="text" class="form-control" id="sectionid"
+                                placeholder="Enter section ID">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="deptname">DeptName</label>
+                            <input name="deptname" type="text" class="form-control" id="deptname"
+                                placeholder="Enter department name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="year">Year</label>
+                            <input name="year" type="number" class="form-control" id="year"
+                                placeholder="Enter year of study">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="semester">Semester</label>
+                            <input name="semester" type="number" class="form-control" id="semester" placeholder="--">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="strength">Strength</label>
+                            <input name="strength" type="number" class="form-control" id="strength"
+                                placeholder="Enter total strength of the section">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                        Details</button>
+                </form>
+
+            </div>
+
+            <div id="resources-add-content" style="display: none;">
+                <h1>Enter Resources details</h1>
+                <form class="form-on-right" action="index.html" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="resource-type">Resource</label>
+                            <select name="resource-type" class="form-control" id="resource-type"
+                                onchange="updateForm(this.value)">
+                                <option value selected="selected" disabled="disabled">Resource</option>
+                                <option>Classroom</option>
+                                <option>Lab</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="type">Type</label>
+                            <input name="type" type="text" class="form-control" id="type" placeholder="Enter type">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="capacity">Capacity</label>
+                            <input name="capacity" type="number" class="form-control" id="capacity"
+                                placeholder="Enter capacity">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="building">Building</label>
+                            <input name="building" type="text" class="form-control" id="building"
+                                placeholder="Enter name of the building">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div id="projector" class="form-group col-md-4" style="display: none;">
+                            <label for="projector">Projector</label>
+
+
+                            <div class="form-control">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline1" value="true" name="customRadioInline1"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline1">Available
+                                    </label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline2" value="false" name="customRadioInline1"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline2">Not Available</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="labIncharge" class="form-group col-md-4" style="display: none;">
+                            <label for="labIncharge">Lab Incharge</label>
+                            <input name="labIncharge" type="text" class="form-control" id="labIncharge"
+                                placeholder="Enter lab incharge ID">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                        Details</button>
+                </form>
+
+            </div>
+
+
+
+            <div id="faculty-update-content" style="display: none;">
+                <h1>Update Faculty content</h1>
+            </div>
+            <div id="course-update-content" style="display: none;">
+                <h1>Update Course content</h1>
+            </div>
+            <div id="section-update-content" style="display: none;">
+                <h1>Update Section content</h1>
+            </div>
+
+
+            <div id="faculty-delete-content" style="display: none;">
+                <h1>Delete Faculty content</h1>
+            </div>
+            <div id="course-delete-content" style="display: none;">
+                <h1>Delete Course content</h1>
+            </div>
+            <div id="section-delete-content" style="display: none;">
+                <h1>Delete Section content</h1>
+            </div>
+
+            <div id="faculty-replace-content" style="display: none;">
+                <h1>Replace Faculty content</h1>
+            </div>
+        </div>
+    </div>
+    <script src="js/admin-main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/adminpage.js"></script>
+  </head>
+  <body>
+     <h1>Replacement Page</h1>
+       <br>
+     <form class="" action="" method="">
+           <div class="col-md-6">
+             <label for="replaceID">Enter Replacement Faculty ID:</label>
+             <input name="replaceID" type="text" class="form-control " id="replaceID" pattern="^.{8,}$" required>
+             <button type="submit" name="button" class="btn btn-dark replacement" style="margin-top:9px;">Generate Replacement</button>
+           </div>
+     </form>
+
+       <div style="margin-top:7px;"class=" col-md-4">
+          <button type="button" class="btn btn-dark viewreplacement">View Replacement</button>
+       </div>
+       <div style="margin-top:7px;"class=" col-md-4">
+          <button type="button" class="btn btn-dark deletereplacement">Delete Replacements</button>
+       </div>
+       <br>
+
+     <table class="table table-hover table-bordered table-dark table-striped edittable border">
+       <thead>
+         <tr>
+             <th scope="col"><%=Heading%></th>
+         </tr>
+       </thead>
+       <tbody>
+         <%
+         if(Data.length!=0){
+         var i=1;
+         Data.forEach(function(data){
+         %>
+         <tr>
+             <td><%=i; %></td>
+             <td><%=data.Replacement_Faculty_ID %></td>
+         </tr>
+         <%  i++; }) %>
+         <% } else{ %>
+             <tr>
+                 <td colspan="7">No Data Found</td>
+             </tr>
+         <% } %>
+       </tbody>
+     </table>
+  </body>
+</html>

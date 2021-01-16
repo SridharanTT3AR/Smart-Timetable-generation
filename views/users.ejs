@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600,700,900|Ubuntu&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <nav class="navbar navbar-dark py-0 bg-dark navbar-expand-lg py-md-0">
+      <a class="navbar-brand" href="#">atms</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="btn btn-dark btn-lg" href="/logout" role="button"><i class="fas fa-sign-out-alt"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <div class="profile">
+    <div class="container-fluid user">
+
+      <div class="row">
+        <div class="col-sm-2 userinfo">
+          <img class="user-img" src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/12/9-Best-Online-Avatars-and-How-to-Make-Your-Own-for-Free-image1-5.png" alt="profile-pic" />
+          <h5>Name: <%= name %> </h3>
+          <h5> <b><i>Faculty</i></b></h5>
+          <br>
+          <h5>Department: <%= dept %> </h3>
+          <br>
+          <h5>Domain Course:</h3>
+          <% domain.forEach(function(domains){ %>
+          <li><%= domains.Domain_Course %></li>
+          <% }) %>
+        </div>
+        <div class="col-sm userfunction">
+          <div class="container-fluid">
+            <div class="row-6">
+              <div class="col">
+                <ul class="nav nav-tabs nav-fill " >
+                  <li class="nav-item">
+                    <a href="" data-target="#Timetable" data-toggle="tab" class="nav-link active">View-Timetable</a>
+
+                  </li>
+                  <li class="nav-item">
+                    <a href="" data-target="#alter" data-toggle="tab" class="nav-link "></a>
+                  </li>
+                </ul>
+                <div class="tab-content py-4">
+                  <div class="tab-pane" id="alter">
+                    <div class="userbutton">
+                      <div class="row-6">
+                        <div class="file btn btn-lg btn-primary">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane active" id="Timetable">
+                    <div class="usertimetable">
+                      <h1>TimeTable</h1>
+                        <iframe width="100%" height="500px" src="timetables/faculty/<%= id %>.pdf"></iframe>
+                      <div class="row-6">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
