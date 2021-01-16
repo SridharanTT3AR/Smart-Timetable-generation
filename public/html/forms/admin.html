@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="admin-add-content">
+        <h1>Enter Admin details</h1>
+        <form class="form-on-right" action="/addadmin" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                        placeholder="Enter name" pattern="^[A-Za-z]+$" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email </label>
+                    <input name="email" type="email" class="form-control" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="age">Age</label>
+                    <input name="age" type="number" class="form-control" id="age" placeholder="Enter Age" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Gender</label>
+                    <div class="form-control">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="gender"
+                                class="custom-control-input" value="M">
+                            <label class="custom-control-label" for="customRadioInline1"> Male </label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="gender"
+                                class="custom-control-input" value="F">
+                            <label class="custom-control-label" for="customRadioInline2"> Female </label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline3" name="gender"
+                                class="custom-control-input" value="O">
+                            <label class="custom-control-label" for="customRadioInline3">Other</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="phone">Phone no</label>
+                    <input name="phone" type="number" class="form-control" id="phone"
+                        placeholder="Enter PhoneNo">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="salary">Salary</label>
+                    <input name="salary" type="tel" class="form-control" id="salary" placeholder="Enter Salary">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="admin-role">Role</label>
+                    <input name="adminrole" type="text" class="form-control" id="admin-role"
+                        placeholder="Enter role of the admin">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                Details</button>
+        </form>
+    </div>
+
+  </body>
+</html>

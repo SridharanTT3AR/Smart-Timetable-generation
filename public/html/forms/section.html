@@ -1,0 +1,42 @@
+<div id="section-add-content">
+    <h1>Enter Section Details</h1>
+    <form class="form-on-right" action="/addsection" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="sectionid">ID</label>
+                <input name="sectionid" type="text" class="form-control" id="sectionid"
+                    placeholder="Enter section ID">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="deptname">DeptName</label>
+                <input name="deptname" type="text" class="form-control" id="deptname"
+                    placeholder="Enter department name" pattern="^[A-Za-z]+$" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="year">Year</label>
+                <input name="year" type="number" class="form-control" id="year"
+                    placeholder="Enter year of study">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="semester">Semester</label>
+                <input name="semester" type="number" class="form-control" id="semester" placeholder="--">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="strength">Strength</label>
+                <input name="strength" type="number" class="form-control" id="strength"
+                    placeholder="Enter total strength of the section">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+            Details</button>
+    </form>
+
+</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="course-add-content">
+        <h1>Enter Course details</h1>
+        <form class="form-on-right" action="/addcourse" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="id">ID</label>
+                    <input name="id" type="text" class="form-control" id="id" placeholder="Enter course-id">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="coursename">Name</label>
+                    <input name="coursename" type="text" class="form-control" id="coursename"
+                        placeholder="Title of the course" pattern="^[A-Za-z]+$" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="type">Course Type:</label>
+                    <select name="type" class="form-control" id="type" onchange="updateForm(this.value)">
+                        <option value selected="selected" disabled="disabled">Type</option>
+                        <option>Theory</option>
+                        <option>Lab-based</option>
+                        <option>Elective</option>
+                        <option>Project-based</option>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="deptname">DeptName</label>
+                    <input name="deptname" type="text" class="form-control" id="deptname"
+                        placeholder="Enter department name" pattern="^[A-Za-z]+$" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="semester">Semester</label>
+                    <input name="semester" type="number" class="form-control" id="semester"
+                        placeholder="Semester in which course is offered">
+                </div>
+                <div id="electiveID" class="form-group col-md-3" style="display: none;">
+                    <label for="electiveID">Elective ID</label>
+                    <input name="electiveID" type="text" class="form-control" id="electiveID"
+                        placeholder="e_id">
+
+                </div>
+            </div>
+            <em>Hours per week</em>
+            <br><br>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="L">Lectures ( L )</label>
+                    <input name="L" type="number" class="form-control" id="L" placeholder="-">
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="T">Tutorials ( T )</label>
+                    <input name="T" type="number" class="form-control" id="T" placeholder="-">
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label for="P">Practicals ( P )</label>
+                    <input name="P" type="number" class="form-control" id="P" placeholder="-">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="C">Credits ( C )</label>
+                    <input name="C" type="number" class="form-control" id="C" placeholder="-">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                Details</button>
+        </form>
+    </div>
+
+  </body>
+</html>

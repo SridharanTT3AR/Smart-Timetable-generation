@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="faculty-add-content">
+        <h1>Enter Faculty details</h1>
+        <form class="form-on-right" action="/addfaculty" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                        placeholder="Enter name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email </label>
+                    <input name="email" type="email" class="form-control" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="age">Age</label>
+                    <input name="age" type="number" class="form-control" id="age" placeholder="Enter Age">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Gender</label>
+                    <div class="form-control">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="gender"
+                                class="custom-control-input" value="M">
+                            <label class="custom-control-label" for="customRadioInline1"> Male </label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="gender"
+                                class="custom-control-input" value="M">
+                            <label class="custom-control-label" for="customRadioInline2"> Female </label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline3" name="gender"
+                                class="custom-control-input" value="O">
+                            <label class="custom-control-label" for="customRadioInline3">Other</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="phone">Phone no</label>
+                    <input name="phone" type="number" class="form-control" id="phone"
+                        placeholder="Enter PhoneNo">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="salary">Salary</label>
+                    <input name="salary" type="number" class="form-control" id="salary" placeholder="Enter Salary">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="dept">DeptName</label>
+                    <input name="dept" type="text" class="form-control" id="dept"
+                        placeholder="Enter Department name" pattern="^[A-Za-z]+$" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="domain">Domain Courses</label>
+                    <input name="domain" type="text" class="form-control" id="domain"
+                        placeholder="Enter Domain courses(comma seperated)">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input name="designation" type="text" class="form-control" id="designation"
+                    placeholder="Enter designation">
+            </div>
+            <div class="form-group">
+                <label for="qualification">Qualification</label>
+                <input name="qualification" type="text" class="form-control" id="qualification"
+                    placeholder="Enter highest qualification">
+            </div>
+            <button type="submit" class="btn btn-outline-success" style="margin-top: 3%;width: 30%;">Add
+                Details</button>
+        </form>
+    </div>
+  </body>
+</html>

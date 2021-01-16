@@ -1,0 +1,156 @@
+.navbar-brand {
+  margin-left: 2rem;
+  font-family: "ubuntu", sans-serif;
+  font-size: 2.5rem !important;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.title {
+  /* background-image: url("../images/bg.jpg"); */
+  background-color: #c2f0ff;
+  /* background-repeat: round; */
+  padding: 10% 0 5% 0;
+}
+
+.title-logo {
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+}
+
+#reviews {
+  text-align: center;
+  color: #fff;
+}
+
+.testimonial-carousel {
+  padding: 7% 15%;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.about-section {
+  text-align: center;
+  /* background-image: url("../images/bg.jpg");
+    background-color:  #c2f0ff;
+    background-repeat: round; */
+  background-color: #0052a5e7;
+  padding: 4%;
+  color: white;
+}
+
+.about-text-title {
+  /* color: white; */
+  font-family: "ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.about-text {
+  padding: 2% 4%;
+  font-family: "ubuntu", sans-serif;
+  font-size: 1.3rem;
+}
+
+.tt-section {
+  margin: 2% 0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.row {
+  margin: 0 2%;
+}
+
+.tab {
+  cursor: pointer;
+  overflow-x: hidden;
+  border-radius: 30px;
+}
+
+.insideTab {
+  padding: 2% 0;
+  font-size: larger;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #989b9e;
+  margin: 1% 2%;
+}
+
+.insideTab:hover {
+  background-color: #cfe2e2;
+}
+
+.active {
+  background-color: #95bbf3;
+}
+
+#tabContent {
+  padding: 5% 0;
+  text-align: center;
+}
+
+.content,
+.active-content {
+  width: 100%;
+  /* position: absolute; */
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
+select {
+  margin-right: 2%;
+}
+
+/* ---------------- */
+.userinfo {
+  word-break: break-word;
+  border: 10px;
+  background-image: linear-gradient(#343a40, #5b69eb);
+  display: inline;
+  padding: 2%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  line-height: 1.5;
+  color: white;
+}
+.user-img {
+  margin: 25px 10px 25px 0;
+  vertical-align: middle;
+  border-radius: 50%;
+  /* -webkit-border-radius: 50%; */
+  max-width: 100%;
+  height: auto;
+}
+.userfunction {
+  background: white;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  padding: 0 16px;
+}
+.usertimetable {
+  /* text  #f0ece3   #4b5d67 */
+  color: white;
+  text-align: center;
+  /* to display the image center */
+  margin-left: auto;
+  margin-right: auto;
+  /* to style the image */
+  border-radius: 25px;
+  background-color: #5b69eb;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
